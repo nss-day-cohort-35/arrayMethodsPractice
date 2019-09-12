@@ -1,40 +1,42 @@
-//foreach -- console log each item in the array
-// let arrayOfEmojis =["😐", "😈", "👾", "👍", "🐿","🐳","🐙","🦖"]
-// for (let index = 0; index < arrayOfEmojis.length; index++) {
-//     console.log(arrayOfEmojis[index])
-// }
 
-// arrayOfEmojis.forEach(emoji => {
-//     console.log(emoji)
-// });
+//------------------------FOR EACH---------------------------------
 
+// foreach -- console log each item in the array
+let arrayOfEmojis =["😐", "😈", "👾", "👍", "🐿","🐳","🐙","🦖"]
 
+//This for loop prints each emoji seperately
+for (let index = 0; index < arrayOfEmojis.length; index++) {
+    console.log(arrayOfEmojis[index])
+}
+//This forEach does the same thing a the for loop. Remember, a forEach is just a for loop with logic built in
+arrayOfEmojis.forEach(emoji => {
+    console.log(emoji)
+});
 
-
-
-
-
+//------------------------FILTER---------------------------------
 
 //Filtering - return an array containing only even numbers
 let myOriginalNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+//This for loop populates the newEvenArray with only even numbers
 let newEvenArray = []
 for (let index = 0; index < myOriginalNumbers.length; index++) {
     if(myOriginalNumbers[index] % 2 === 0){
        newEvenArray.push(myOriginalNumbers[index])
     }
 }
-// console.log(newEvenArray)
+console.log(newEvenArray)
 
-let filteredArray = myOriginalNumbers.filter(number => number % 2 === 0 && number + 7 === 9 )
+//This for each does all the work of the previous for loop with only one line of code
+let filteredArray = myOriginalNumbers.filter(number => number % 2 === 0)
+
+//the filter does not CHANGE the original array, it makes a new array 
 console.log(filteredArray)
 console.log(myOriginalNumbers)
 
+//------------------------FIND---------------------------------
 
-
-
-
-
-//Find - find the doughnut with a certain name, then certain type
+//Find - find the doughnut with a certain type
 let doughnutList = [
     {
         name: "super sprinkle",
@@ -62,11 +64,14 @@ let doughnutList = [
     }
 
 ]
+
+//This find returns only the FIRST doughnut that matches the condition. Even though all doughnuts are of type cake it will only return one.
 let bestDoughnut= doughnutList.find(doughnut => doughnut.type === "cake")
 console.log(bestDoughnut)
 
-// map ----> map over the doughnuts and return an html string, put that string on the dom
+//------------------------MAP---------------------------------
 
+// map ----> map over the doughnuts and return an html string, put that string on the dom
 let doughnutSection = document.getElementById("myDoughnuts")
 
 let htmlStringArray = doughnutList.map(doughnut => {
@@ -86,6 +91,7 @@ console.log(bigOlString)
 doughnutSection.innerHTML = bigOlString
 
 
+//------------------------REDUCE---------------------------------
 
 
 // reduce ---> total the amount of doughnutSales for each doughnut type
