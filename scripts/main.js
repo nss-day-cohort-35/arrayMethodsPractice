@@ -4,7 +4,7 @@
 // foreach -- console log each item in the array
 let arrayOfEmojis =["😐", "😈", "👾", "👍", "🐿","🐳","🐙","🦖"]
 
-//This for loop prints each emoji seperately
+//This for loop prints each emoji separately 
 for (let index = 0; index < arrayOfEmojis.length; index++) {
     console.log(arrayOfEmojis[index])
 }
