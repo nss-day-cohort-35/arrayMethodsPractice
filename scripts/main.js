@@ -30,7 +30,7 @@ console.log(newEvenArray)
 //This for each does all the work of the previous for loop with only one line of code
 let filteredArray = myOriginalNumbers.filter(number => number % 2 === 0)
 
-//the filter does not CHANGE the original array, it makes a new array 
+//the filter does not CHANGE the original array, it makes a new array
 console.log(filteredArray)
 console.log(myOriginalNumbers)
 
