@@ -74,16 +74,14 @@ console.log(bestDoughnut)
 // map ----> map over the doughnuts and return an html string, put that string on the dom
 let doughnutSection = document.getElementById("myDoughnuts")
 
+//mapping over the array of objects and TRANSFORMING it to an array of html strings
 let htmlStringArray = doughnutList.map(doughnut => {
     return `
     <h1>${doughnut.name}</h1>`
 })
-
 console.log(htmlStringArray)
 
-let practiceArray = ["mo", "likes", "eMOjis"]
-let withEmojis = practiceArray.join("👾")
-console.log(withEmojis)
+//take the array of html strings and join them on the space. Results in string. 
 let bigOlString = htmlStringArray.join(" ")
 
 console.log(bigOlString)
@@ -118,17 +116,21 @@ let doughnutSales = [
 
 ]
 
+//first we must loop over the whole donut sales array to access the yearly sales total of each
 doughnutSales.forEach(store => {
+    //reduce loops over the yearlySalesTotal array and adds all the values together
     let totalSales = store.yearlySalesTotal.reduce((currentValue, nextValue) => currentValue += nextValue, 0)
-   let newObject = {
+    //creating a new object with only the store name and total sales
+    let newObject = {
        name: store.storeName,
        totalSales:totalSales
-   }
+     }
    console.log(newObject)
 })
 
 let bunchOfStrings = ["one", "two", "three", "four"]
 
+//you can also use reduce to join together strings
 let oneString = bunchOfStrings.reduce((currentWord, nextWord) => currentWord + " " + nextWord,"")
 console.log(oneString)
 
